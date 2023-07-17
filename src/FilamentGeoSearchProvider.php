@@ -1,20 +1,20 @@
 <?php
 
-namespace Heloufir\FilamentLeafLetGeoSearch;
+namespace Rhukster\FilamentGeoSearch;
 
+use App\Models\Asset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use ZeroDaHero\LaravelWorkflow\Facades\WorkflowFacade;
 use ZeroDaHero\LaravelWorkflow\WorkflowServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 
-class FilamentLeafLetGeoSearchProvider extends PackageServiceProvider
+class FilamentGeoSearchProvider extends PackageServiceProvider
 {
-
     public function configurePackage(Package $package): void
     {
         // Package name
-        $package->name('filament-leaflet-geosearch');
+        $package->name('filament-geosearch');
 
         // Views
         $package->hasViews();
@@ -28,7 +28,7 @@ class FilamentLeafLetGeoSearchProvider extends PackageServiceProvider
         ], [
             __DIR__ . '/../dist/js/leaflet.js' => public_path('filament/assets/js/leaflet.js'),
             __DIR__ . '/../dist/js/geosearch.umd.js' => public_path('filament/assets/js/geosearch.umd.js'),
-        ])), 'filament-leaflet-geosearch-assets');
+        ])), 'filament-geosearch-assets');
     }
 
 }

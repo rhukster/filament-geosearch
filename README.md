@@ -1,11 +1,13 @@
-# Filament LeafLet GeoSearch
+# Filament GeoSearch
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/heloufir/filament-leaflet-geosearch.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-leaflet-geosearch)
-[![Total Downloads](https://img.shields.io/packagist/dt/heloufir/filament-leaflet-geosearch.svg?style=flat-square)](https://packagist.org/packages/heloufir/filament-leaflet-geosearch)
+Forked from https://github.com/heloufir/filament-leaflet-geosearch to add customizable providers w/APIs and other tweaks.
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/rhukster/filament-geosearch.svg?style=flat-square)](https://packagist.org/packages/rhukster/filament-geosearch)
+[![Total Downloads](https://img.shields.io/packagist/dt/rhukster/filament-geosearch.svg?style=flat-square)](https://packagist.org/packages/rhukster/filament-geosearch)
 
 This package provides a Filament Form Field integration of the LeafLet GeoSearch package [https://github.com/smeijer/leaflet-geosearch](https://github.com/smeijer/leaflet-geosearch)
 
-![Filament LeafLet GeoSearch](filament-leaflet-geosearch-demo.png)
+![Filament GeoSearch](filament-geosearch.png)
 
 
 ## Installation
@@ -13,19 +15,15 @@ This package provides a Filament Form Field integration of the LeafLet GeoSearch
 You can install the package via composer:
 
 ```bash
-composer require heloufir/filament-leaflet-geosearch
+composer require rhukster/filament-geosearch
 ```
 
 You need to publish assets used by this package:
 ```bash
-php artisan vendor:publish --tag=filament-leaflet-geosearch-assets
+php artisan vendor:publish --tag=filament-geosearch-assets
 ```
 
-> **From the version 1.1.0, you need to register manually the assets (styles and scripts)**
->
-> This decision was made to make the plugin standalone for users who want to use it without Filament administration (only with Filament forms)
-
-- If you are using this package with `Filament administration`, add this lines to the `boot()` function of your `AppServiceProvider`
+If you are using this package with `Filament administration`, add this lines to the `boot()` function of your `AppServiceProvider`
 ```bash
 public function boot()
 {
@@ -93,10 +91,15 @@ public static function form(Form $form): Form
         ->schema([
             // ...
             LeafletInput::make('location')
+                ->setStyle('bar') // Here you can set: bar|button layout style (default: bar)
+                ->autoComplete(true) // Here you enable/disable: true|false (default: true)
+                ->autoCompleteDelay(250) // Here you can set the debounce delay in ms (default: 250)
                 ->setMapHeight(300) // Here you can specify a map height in pixels, by default the height is equal to 200
                 ->setZoomControl(false) // Here you can enable/disable zoom control on the map (default: true)
                 ->setScrollWheelZoom(false) // Here you can enable/disable zoom on wheel scroll (default: true)
                 ->setZoomLevel(3) // Here you can change the default zoom level (when the map is loaded for the first time), default value is 10
+                ->provider('MapBox') // Here you can provide a custom provider as supported by leaflet-geosearch - https://github.com/smeijer/leaflet-geosearch#about, (default: 'OpenStreetMap') 
+                ->apiKey('YOUR_API_KEY') // Here you should provide your public API key for whatever provider you have configured (if required)
                 ->required()
             // ...
         ]);
@@ -126,7 +129,7 @@ For fast support, please join the [**Filament** community](https://filamentphp.c
 ## Credits
 
 - [heloufir](https://github.com/heloufir)
-- [All Contributors](https://github.com/heloufir/filament-leaflet-geosearch/graphs/contributors)
+- [All Contributors](https://github.com/rhukster/filament-geosearch/graphs/contributors)
 
 ## License
 

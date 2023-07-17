@@ -1,7 +1,7 @@
 {
-    "name": "heloufir/filament-leaflet-geosearch",
+    "name": "rhukster/filament-geosearch",
 
-    "description": "Implementation of LeafLet GeoSearch as a Filament Form Field",
+    "description": "Implementation of GeoSearch as a Filament Form Field",
     "keywords": [
         "filament",
         "form",
@@ -9,7 +9,7 @@
         "leaflet",
         "geosearch"
     ],
-    "homepage": "https://github.com/heloufir/filament-leaflet-geosearch",
+    "homepage": "https://github.com/rhukster/filament-geosearch",
     "require": {
         "php": "^8.0",
         "filament/forms": "^2.0",
@@ -18,19 +18,19 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Heloufir\\FilamentLeafLetGeoSearch\\": "src/"
+            "Rhukster\\FilamentGeoSearch\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "EL OUFIR Hatim",
-            "email": "eloufirhatim@gmail.com"
+            "name": "Andy Miller",
+            "email": "rhuk@rhuk.net"
         }
     ],
     "extra": {
         "laravel": {
             "providers": [
-                "Heloufir\\FilamentLeafLetGeoSearch\\FilamentLeafLetGeoSearchProvider"
+                "Rhukster\\FilamentGeoSearch\\FilamentGeoSearchProvider"
             ]
         }
     },
