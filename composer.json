@@ -1,6 +1,5 @@
 {
     "name": "rhukster/filament-geosearch",
-
     "description": "Implementation of GeoSearch as a Filament Form Field",
     "keywords": [
         "filament",
@@ -11,9 +10,7 @@
     ],
     "homepage": "https://github.com/rhukster/filament-geosearch",
     "require": {
-        "php": "^8.0",
-        "filament/forms": "^2.0",
-        "spatie/laravel-package-tools": "^1.9"
+        "php": "^8.0"
     },
     "license": "MIT",
     "autoload": {
